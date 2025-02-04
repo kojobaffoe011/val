@@ -15,7 +15,7 @@ import { Button } from "@/components/ui/button";
 import { sendEmail } from "@/lib/email";
 
 
-export function AcceptChoice({ choice }: { choice: string, setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
+export function AcceptChoice({ choice }: { choice: string }) {
 
   const handleContinue = async () => {
     try {
