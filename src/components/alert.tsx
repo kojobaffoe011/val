@@ -1,4 +1,4 @@
-"use client";
+// "use client";
 
 import {
   AlertDialog,
@@ -19,7 +19,7 @@ export function AcceptChoice({ choice }: { choice: string }) {
     try {
       const data = await sendEmail(choice);
       if(!data.error){
-        window.location.reload()
+        // window.location.reload()
       }
     } catch (error) {
 
