@@ -43,6 +43,7 @@ const NotificationCarousel = () => {
               height={500}
               className="rounded-md"
               alt="Picture of the author"
+              priority={true}
               />
           </div>
         </div>

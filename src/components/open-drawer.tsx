@@ -3,7 +3,6 @@
 import Image from 'next/image'
 import * as React from "react"
 import { Check } from "lucide-react"
-// import { Bar, BarChart, ResponsiveContainer } from "recharts"
 import { Button } from "@/components/ui/button"
 import {
   Drawer,
@@ -22,7 +21,7 @@ const choices = [
   {
     name: 'Dinner',
     type: "dinner",
-    description: "An evening of a sweet dinner",
+    description: "Sweet dinner with bae",
     image: "/dinner.svg",
   },
   {
@@ -35,14 +34,13 @@ const choices = [
 
 export function OpenDrawer() {
   const [choice, setChoice] = React.useState<string>('dinner')
-  const [open, setOpen] = React.useState<boolean>(false)
 
   const chooseDateType = (type: string) => {
     setChoice(type)
   }
 
   return (
-    <Drawer open={open} onOpenChange={setOpen}>
+    <Drawer>
       <DrawerTrigger asChild>
         <Button>Yessss my bae</Button>
       </DrawerTrigger>
@@ -86,7 +84,7 @@ export function OpenDrawer() {
           </div>))}
           <div className="mx-auto max-w-sm w-full col-span-2">
           <DrawerFooter >
-            <AcceptChoice choice={choice} setOpen={setOpen}/>
+            <AcceptChoice choice={choice}/>
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>

@@ -15,16 +15,15 @@ import { Button } from "@/components/ui/button";
 import { sendEmail } from "@/lib/email";
 
 
-export function AcceptChoice({ choice, setOpen }: { choice: string, setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
+export function AcceptChoice({ choice }: { choice: string, setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
 
   const handleContinue = async () => {
     try {
       const data = await sendEmail(choice);
       if(!data.error){
-        setOpen(false)
+        // setOpen(false)
       }
     } catch (error) {
-
       console.error(error);
     }
   };
