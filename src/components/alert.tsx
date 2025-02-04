@@ -1,5 +1,3 @@
-"use client";
-
 import {
   AlertDialog,
   AlertDialogAction,
@@ -21,7 +19,6 @@ export function AcceptChoice({ choice }: { choice: string }) {
     try {
       const data = await sendEmail(choice);
       if(!data.error){
-        // setOpen(false)
       }
     } catch (error) {
       console.error(error);
