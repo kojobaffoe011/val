@@ -1,3 +1,5 @@
+"use client";
+
 import {
   AlertDialog,
   AlertDialogAction,
@@ -20,6 +22,7 @@ export function AcceptChoice({ choice }: { choice: string }) {
         window.location.reload()
       }
     } catch (error) {
+
       console.error(error);
     }
   };

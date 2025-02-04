@@ -26,7 +26,6 @@ export const VercelInviteUserEmail = ({
   username,
   invitedByUsername,
   teamName,
-  // inviteLink,
   inviteFromIp,
   inviteFromLocation,
 }: VercelInviteUserEmailProps) => {
