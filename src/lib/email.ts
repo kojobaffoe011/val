@@ -10,7 +10,7 @@ export async function sendEmail (choice: string) {
   try {
     await resend.emails.send({
       from: "Kojo Baffoe <onboarding@resend.dev>",
-      to: ["kojobaffo935@gmail.com"],
+      to: ["kojobaffo935@gmail.com", "edmondswynonna@gmail.com"],
       subject: "Invitation to Date with Kojo",
       react: VercelInviteUserEmail({  
         username: 'Wynonna',
