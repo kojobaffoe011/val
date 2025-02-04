@@ -15,16 +15,6 @@ import { sendEmail } from "@/lib/email";
 
 export function AcceptChoice({ choice }: { choice: string }) {
 
-  const handleContinue = async () => {
-    try {
-      const data = await sendEmail(choice);
-      if(!data.error){
-      }
-    } catch (error) {
-      console.error(error);
-    }
-  };
-
   return (
     <AlertDialog>
       <AlertDialogTrigger asChild>
@@ -38,8 +28,8 @@ export function AcceptChoice({ choice }: { choice: string }) {
           </AlertDialogDescription>
         </AlertDialogHeader>
         <AlertDialogFooter>
-          <AlertDialogCancel>Cancel</AlertDialogCancel>{" "}
-          <AlertDialogAction onClick={() => handleContinue()}>
+          <AlertDialogCancel>Cancel</AlertDialogCancel>
+          <AlertDialogAction onClick={() => sendEmail(choice)}>
             Continue
           </AlertDialogAction>
         </AlertDialogFooter>
