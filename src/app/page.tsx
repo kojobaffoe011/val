@@ -11,8 +11,8 @@ const dancingScript = Pacifico({ subsets: ['latin'], weight: '400' });
 const images = ['/bear.svg', '/love.svg', '/love_annex.svg']
  
 const NotificationCarousel = () => {
-  const [currentNotification, setCurrentNotification] = React.useState(0);
-  const [fadeClass, setFadeClass] = React.useState("fade-in");
+  const [currentNotification, setCurrentNotification] = React.useState<number>(0);
+  const [fadeClass, setFadeClass] = React.useState<string>("fade-in");
 
   React.useEffect(() => {
     // Set up an interval to rotate through the notifications
@@ -58,7 +58,7 @@ export default function Home() {
       <div className="flex justify-end w-full">
         <ModeToggle />
       </div>
-      <main className="gap-8 row-start-2 items-center sm:items-start w-full grid grid-cols-2 h-full"> 
+      <main className="gap-8 row-start-2 items-center sm:items-start w-full grid lg:grid-cols-2 md:grid-cols-1 sm:grid-col-1 h-full"> 
         <div className='flex h-full relative w-full'>
           <div className='flex flex-col gap-1 w-full'>
             <div className='flex flex-col gap-8'>

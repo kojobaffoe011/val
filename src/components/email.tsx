@@ -60,7 +60,6 @@ export const VercelInviteUserEmail = ({
               <Button
                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
                 href={url}
-                // onClick={()=> openOutlookCalendar()}
               >
                 Add to calendar
               </Button>

@@ -34,14 +34,15 @@ const choices = [
 ]
 
 export function OpenDrawer() {
-  const [choice, setChoice] = React.useState('dinner')
+  const [choice, setChoice] = React.useState<string>('dinner')
+  const [open, setOpen] = React.useState<boolean>(false)
 
   const chooseDateType = (type: string) => {
     setChoice(type)
   }
 
   return (
-    <Drawer>
+    <Drawer open={open} onOpenChange={setOpen}>
       <DrawerTrigger asChild>
         <Button>Yessss my bae</Button>
       </DrawerTrigger>
@@ -85,7 +86,7 @@ export function OpenDrawer() {
           </div>))}
           <div className="mx-auto max-w-sm w-full col-span-2">
           <DrawerFooter >
-            <AcceptChoice choice={choice}/>
+            <AcceptChoice choice={choice} setOpen={setOpen}/>
             <DrawerClose asChild>
               <Button variant="outline">Cancel</Button>
             </DrawerClose>

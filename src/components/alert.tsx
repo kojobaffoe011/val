@@ -1,4 +1,4 @@
-// "use client";
+"use client";
 
 import {
   AlertDialog,
@@ -14,12 +14,14 @@ import {
 import { Button } from "@/components/ui/button";
 import { sendEmail } from "@/lib/email";
 
-export function AcceptChoice({ choice }: { choice: string }) {
+
+export function AcceptChoice({ choice, setOpen }: { choice: string, setOpen: React.Dispatch<React.SetStateAction<boolean>> }) {
+
   const handleContinue = async () => {
     try {
       const data = await sendEmail(choice);
       if(!data.error){
-        // window.location.reload()
+        setOpen(false)
       }
     } catch (error) {
 
