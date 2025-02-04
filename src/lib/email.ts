@@ -13,11 +13,8 @@ export async function sendEmail (choice: string) {
       subject: "Invitation to Date with Kojo",
       react: VercelInviteUserEmail({  
         username: 'Wynonna',
-  userImage: `/static/vercel-user.png`,
   invitedByUsername: 'Kojo',
   teamName: choice === 'dinner' ? 'Dinner' : 'Paint & Bake',
-  teamImage: `/static/vercel-team.png`,
-  inviteLink: 'https://vercel.com/teams/invite/foo',
   inviteFromIp: '204.13.186.218',
   inviteFromLocation: 'Duisburg, Germany',})
     });

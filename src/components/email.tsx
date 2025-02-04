@@ -6,7 +6,6 @@ import {
   Heading,
   Hr,
   Html,
-  Img,
   Preview,
   Section,
   Tailwind,
@@ -18,7 +17,6 @@ interface VercelInviteUserEmailProps {
   username?: string;
   invitedByUsername?: string;
   teamName?: string;
-  inviteLink?: string;
   inviteFromIp?: string;
   inviteFromLocation?: string;
 }
@@ -28,11 +26,19 @@ export const VercelInviteUserEmail = ({
   username,
   invitedByUsername,
   teamName,
-  inviteLink,
+  // inviteLink,
   inviteFromIp,
   inviteFromLocation,
 }: VercelInviteUserEmailProps) => {
   const previewText = `Join ${invitedByUsername} on a Date`;
+  const title = encodeURIComponent("Valentine's Date");
+  const details = encodeURIComponent("Date at 5 PM 🌹");
+  const location = encodeURIComponent("Romantic Restaurant, City");
+  const startDate = "2025-02-14T17:00:00";
+  const endDate = "2025-02-14T21:00:00";
+  
+  const url = `https://outlook.live.com/calendar/0/deeplink/compose?subject=${title}&body=${details}&location=${location}&startdt=${startDate}&enddt=${endDate}`;
+  
 
   return (
     <Html>
@@ -54,7 +60,8 @@ export const VercelInviteUserEmail = ({
             <Section className="text-center mt-[32px] mb-[32px]">
               <Button
                 className="bg-[#000000] rounded text-white text-[12px] font-semibold no-underline text-center px-5 py-3"
-                href={inviteLink}
+                href={url}
+                // onClick={()=> openOutlookCalendar()}
               >
                 Add to calendar
               </Button>
@@ -79,7 +86,6 @@ VercelInviteUserEmail.PreviewProps = {
   username: 'alanturing',
   invitedByUsername: 'Kojo',
   teamName: 'Enigma',
-  inviteLink: 'https://vercel.com/teams/invite/foo',
   inviteFromIp: '204.13.186.218',
   inviteFromLocation: 'São Paulo, Brazil',
 } as VercelInviteUserEmailProps;
